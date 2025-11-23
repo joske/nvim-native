@@ -133,6 +133,7 @@ map({ "n" }, "<Leader>l", "", { desc = "LSP" })
 map({ "n", "v", "x" }, "<leader>lf", vim.lsp.buf.format, { desc = "Format" })
 map({ "n", "v", "x" }, "<leader>la", vim.lsp.buf.code_action, { desc = "Code Action" })
 map({ "n" }, "<Leader>lr", vim.lsp.buf.rename, { desc = "Rename" })
+map({ "n" }, "<leader>lS", "<cmd>AerialToggle!<CR>", { desc = "Toggle Aerial" })
 map({ "n" }, "gd", function() Snacks.picker.lsp_definitions() end, { desc = "Definition" })
 map({ "n" }, "gi", function() Snacks.picker.lsp_implementations() end, { desc = "Implementations" })
 map({ "n" }, "gr", function() Snacks.picker.lsp_references() end, { desc = "References" })
@@ -162,8 +163,9 @@ map({ "n" }, "<leader>dw", function() require("dap.ui.widgets").hover() end, { d
 -- comment
 map({ "n", "v", "x" }, "<leader>/", function() require("Comment.api").toggle.linewise() end,
     { desc = "Line Comment" })
-map({ "n", "v", "x" }, "<leader>b", function() require("Comment.api").toggle.blockwise() end,
-    { desc = "Block Comment" })
+-- map({ "n", "v", "x" }, "<leader>b", function() require("Comment.api").toggle.blockwise() end,
+-- { desc = "Block Comment" })
 
--- aerial
-map({ "n" }, "<leader>lS", "<cmd>AerialToggle!<CR>", { desc = "Toggle Aerial" })
+-- texlab
+map({ "n" }, "<leader>b", "", { desc = "Build" })
+map({ "n" }, "<leader>bt", "<cmd>LspTexlabBuild<CR>", { desc = "Build LaTeX Document" })
