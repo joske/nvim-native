@@ -25,7 +25,7 @@ vim.g.rustaceanvim = {
 
 -- Now load the plugins
 vim.pack.add({
-    { src = "https://github.com/mrcjkb/rustaceanvim", version = "main" },
+    { src = "https://github.com/mrcjkb/rustaceanvim" },
     { src = "https://github.com/saecki/crates.nvim" },
     { src = 'https://github.com/mfussenegger/nvim-dap' },
     { src = 'https://github.com/rcarriga/nvim-dap-ui' },
