@@ -1,6 +1,8 @@
-vim.pack.add {
-    { src = 'https://github.com/stevearc/aerial.nvim' },
-}
+vim.pack.add({
+        { src = 'https://github.com/stevearc/aerial.nvim' },
+    },
+    { confirm = false }
+)
 require('aerial').setup {
     backends = { "lsp", "treesitter", "markdown" },
     layout = {
@@ -11,5 +13,5 @@ require('aerial').setup {
     show_guides = true,
     attach_mode = "window",
     close_automatic_events = { "unsupported", "unfocus" },
-    open_automatic = true,
+    open_automatic = false,
 }

@@ -29,7 +29,7 @@ vim.pack.add({
     { src = "https://github.com/saecki/crates.nvim" },
     { src = 'https://github.com/mfussenegger/nvim-dap' },
     { src = 'https://github.com/rcarriga/nvim-dap-ui' },
-})
+}, { confirm = false })
 
 require("crates").setup({})
 require('neotest').setup {

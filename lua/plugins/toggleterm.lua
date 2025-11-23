@@ -1,8 +1,9 @@
-vim.pack.add({
+vim.pack.add(
     {
-        src = "https://github.com/akinsho/toggleterm.nvim",
-    }
-})
+        { src = "https://github.com/akinsho/toggleterm.nvim", },
+    },
+    { confirm = false }
+)
 
 local opts = {
     direction = "float",

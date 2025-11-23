@@ -1,6 +1,7 @@
-vim.pack.add {
-    { src = "https://github.com/akinsho/bufferline.nvim", }
-}
+vim.pack.add(
+    { "https://github.com/akinsho/bufferline.nvim" },
+    { confirm = false }
+)
 require("bufferline").setup {
     options = {
         diagnostics = "nvim_lsp",

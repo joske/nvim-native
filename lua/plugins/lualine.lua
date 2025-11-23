@@ -1,50 +1,53 @@
-vim.pack.add({
-	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
-})
+vim.pack.add(
+    {
+        { src = "https://github.com/nvim-lualine/lualine.nvim" },
+    },
+    { confirm = false }
+)
 local function lsp_clients()
-	local clients = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
-	if #clients == 0 then
-		return ""
-	end
-	local seen, names = {}, {}
-	for _, c in ipairs(clients) do
-		if not seen[c.name] then
-			seen[c.name] = true
-			table.insert(names, c.name)
-		end
-	end
-	return "  " .. table.concat(names, ", ")
+    local clients = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
+    if #clients == 0 then
+        return ""
+    end
+    local seen, names = {}, {}
+    for _, c in ipairs(clients) do
+        if not seen[c.name] then
+            seen[c.name] = true
+            table.insert(names, c.name)
+        end
+    end
+    return "  " .. table.concat(names, ", ")
 end
 vim.opt.laststatus = 3
 vim.opt.winbar = " " -- Reserve space for winbar to prevent jumping
 require("lualine").setup({
-	options = {
-		globalstatus = true,
-		theme = "auto",
-		disabled_filetypes = { statusline = {}, winbar = {} },
-	},
-	sections = {
-		lualine_a = { "mode" },
-		lualine_b = { "branch" },
-		lualine_c = { "filename" },
-		lualine_x = { lsp_clients, "encoding", "fileformat", "filetype" },
-		lualine_y = { "progress" },
-		lualine_z = { "location" },
-	},
-	winbar = {
-		lualine_c = {
-			{
-				"aerial",
-				sep = " > ",
-				depth = nil,
-				dense = false,
-				dense_sep = ".",
-				colored = true,
-			},
-		},
-	},
-	inactive_winbar = {
-		lualine_c = { "filename" },
-	},
-	extensions = { "neo-tree" },
+    options = {
+        globalstatus = true,
+        theme = "auto",
+        disabled_filetypes = { statusline = {}, winbar = {} },
+    },
+    sections = {
+        lualine_a = { "mode" },
+        lualine_b = { "branch" },
+        lualine_c = { "filename" },
+        lualine_x = { lsp_clients, "encoding", "fileformat", "filetype" },
+        lualine_y = { "progress" },
+        lualine_z = { "location" },
+    },
+    winbar = {
+        lualine_c = {
+            {
+                "aerial",
+                sep = " > ",
+                depth = nil,
+                dense = false,
+                dense_sep = ".",
+                colored = true,
+            },
+        },
+    },
+    inactive_winbar = {
+        lualine_c = { "filename" },
+    },
+    extensions = { "neo-tree" },
 })
