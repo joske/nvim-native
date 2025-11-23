@@ -164,3 +164,6 @@ map({ "n", "v", "x" }, "<leader>/", function() require("Comment.api").toggle.lin
     { desc = "Line Comment" })
 map({ "n", "v", "x" }, "<leader>b", function() require("Comment.api").toggle.blockwise() end,
     { desc = "Block Comment" })
+
+-- aerial
+map({ "n" }, "<leader>lS", "<cmd>AerialToggle!<CR>", { desc = "Toggle Aerial" })

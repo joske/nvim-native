@@ -9,6 +9,10 @@
       "src": "https://github.com/antoinemadec/FixCursorHold.nvim"
     },
     "LuaSnip": [],
+    "aerial.nvim": {
+      "rev": "3c42785790d401731e7809a25f27f62dae2fec12",
+      "src": "https://github.com/stevearc/aerial.nvim"
+    },
     "bufferline.nvim": [],
     "crates.nvim": [],
     "fidget.nvim": {
