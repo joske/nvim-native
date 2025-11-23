@@ -43,3 +43,8 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'QuitPre' }, {
         end
     end
 })
+
+local api = require("nvim-tree.api")
+api.events.subscribe(api.events.Event.FileCreated, function(file)
+    vim.cmd("edit " .. vim.fn.fnameescape(file.fname))
+end)
