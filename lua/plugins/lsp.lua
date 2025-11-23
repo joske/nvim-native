@@ -22,6 +22,7 @@ require('mason-tool-installer').setup {
         "texlab",
         "json-lsp",
         "marksman",
+        "bashls",
 
         -- formatters
         "shfmt",
