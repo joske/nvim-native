@@ -90,11 +90,11 @@ map({ "n" }, "<leader>fw", function() Snacks.picker.grep() end, { desc = "Live G
 
 -- quit
 map({ "n" }, "<leader>q", "<cmd>:qa<CR>", { desc = "Quit NeoVim." })
-map({ "n" }, "<leader>Q", "<Cmd>:wqa<CR>", { desc = "Quit all buffers and write." })
+map({ "n" }, "<leader>Q", "<Cmd>:wqa<CR>", { desc = "Write and Quit" })
 
 -- tree
-map({ "n" }, "<leader>e", "<Cmd>:NvimTreeToggle<CR>", { desc = "Toggle Neotree" })
-map({ "n" }, "<leader>o", "<Cmd>:NvimTreeFocus<CR>", { desc = "Focus Neotree" })
+map({ "n" }, "<leader>e", "<Cmd>:NvimTreeToggle<CR>", { desc = "Toggle Tree" })
+map({ "n" }, "<leader>o", "<Cmd>:NvimTreeFocus<CR>", { desc = "Focus Tree" })
 
 -- rust
 map({ "n" }, "<Leader>r", "", { desc = "Rust" })
