@@ -62,12 +62,6 @@ vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
 map("n", "<leader>u", "", { desc = "UI" })
 map("n", "<leader>uh", toggle_inlay_hints, { desc = "Toggle Inlay Hints" })
 
--- save
-map({ "n", "i", "v" }, "<C-s>", "<esc><cmd>w<CR>", { silent = true })
-
--- term
-map({ "n", "t" }, "<F7>", "<cmd>ToggleTerm<CR>", { desc = "Open Terminal" })
-
 -- pickers
 map({ "n" }, "<leader>f", "", { desc = "Find" })
 map({ "n" }, "<leader>fB", function() Snacks.picker.grep_buffers() end, { desc = "Grep Open Buffers" })
@@ -135,6 +129,17 @@ map({ "n" }, "gd", function() Snacks.picker.lsp_definitions() end, { desc = "Def
 map({ "n" }, "gi", function() Snacks.picker.lsp_implementations() end, { desc = "Implementations" })
 map({ "n" }, "gr", function() Snacks.picker.lsp_references() end, { desc = "References" })
 
+-- Build
+map({ "n" }, "<leader>b", "", { desc = "Build" })
+map({ "n" }, "<leader>bt", "<cmd>LspTexlabBuild<CR>", { desc = "Build LaTeX Document" })
+map({ "n" }, "<leader>bc", "<cmd>!cargo build<CR>", { desc = "Cargo Build" })
+
+-- save
+map({ "n", "i", "v" }, "<C-s>", "<esc><cmd>w<CR>", { silent = true })
+
+-- term
+map({ "n", "t" }, "<F7>", "<cmd>ToggleTerm<CR>", { desc = "Open Terminal" })
+
 -- debug (DAP)
 map({ "n" }, "<leader>d", "", { desc = "Debug" })
 map({ "n" }, "<leader>db", function() require("dap").toggle_breakpoint() end, { desc = "Toggle Breakpoint" })
@@ -156,7 +161,3 @@ map({ "n" }, "<leader>ds", function() require("dap").session() end, { desc = "Se
 map({ "n" }, "<leader>dt", function() require("dap").terminate() end, { desc = "Terminate" })
 map({ "n" }, "<leader>du", function() require("dapui").toggle() end, { desc = "Toggle DAP UI" })
 map({ "n" }, "<leader>dw", function() require("dap.ui.widgets").hover() end, { desc = "Widgets" })
-
--- texlab
-map({ "n" }, "<leader>b", "", { desc = "Build" })
-map({ "n" }, "<leader>bt", "<cmd>LspTexlabBuild<CR>", { desc = "Build LaTeX Document" })
