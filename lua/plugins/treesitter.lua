@@ -9,6 +9,6 @@ local ts = require('nvim-treesitter')
 
 -- Wait at most 30 seconds to finish installation.
 ts.install(
-    { "lua", "rust", "bash", "toml", "json", "yaml", "markdown", },
+    { "lua", "rust", "bash", "toml", "json", "yaml", "markdown", "latex", "html" },
     { summary = false }
 ):wait(30000)
