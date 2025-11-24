@@ -89,7 +89,7 @@ map({ "n" }, "<leader>fT", function() Snacks.picker.lsp_type_definitions() end, 
 map({ "n" }, "<leader>fw", function() Snacks.picker.grep() end, { desc = "Live Grep" })
 
 -- quit
-map({ "n" }, "<leader>q", "<cmd>:q<CR>", { desc = "Quit the current buffer." })
+map({ "n" }, "<leader>q", "<cmd>:qa<CR>", { desc = "Quit NeoVim." })
 map({ "n" }, "<leader>Q", "<Cmd>:wqa<CR>", { desc = "Quit all buffers and write." })
 
 -- tree
