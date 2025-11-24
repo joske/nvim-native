@@ -1,6 +1,3 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
 local map = vim.keymap.set
 
 -- Remap 0 to go to first non-blank character
@@ -159,12 +156,6 @@ map({ "n" }, "<leader>ds", function() require("dap").session() end, { desc = "Se
 map({ "n" }, "<leader>dt", function() require("dap").terminate() end, { desc = "Terminate" })
 map({ "n" }, "<leader>du", function() require("dapui").toggle() end, { desc = "Toggle DAP UI" })
 map({ "n" }, "<leader>dw", function() require("dap.ui.widgets").hover() end, { desc = "Widgets" })
-
--- comment
-map({ "n", "v", "x" }, "<leader>/", function() require("Comment.api").toggle.linewise() end,
-    { desc = "Line Comment" })
--- map({ "n", "v", "x" }, "<leader>b", function() require("Comment.api").toggle.blockwise() end,
--- { desc = "Block Comment" })
 
 -- texlab
 map({ "n" }, "<leader>b", "", { desc = "Build" })
