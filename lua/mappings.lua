@@ -112,7 +112,14 @@ map({ "n" }, "<leader>Q", "<Cmd>:wqa<CR>", { desc = "Write and Quit" })
 
 -- explorer
 map({ "n" }, "<leader>e", function() Snacks.explorer() end, { desc = "Toggle Explorer" })
-map({ "n" }, "<leader>o", function() Snacks.explorer.open() end, { desc = "Focus Explorer" })
+map({ "n" }, "<leader>o", function()
+    local explorers = Snacks.picker.get({ source = "explorer" })
+    if #explorers > 0 then
+        explorers[1]:focus()
+    else
+        Snacks.explorer()
+    end
+end, { desc = "Focus Explorer" })
 
 -- rust
 map({ "n" }, "<Leader>r", "", { desc = "Rust" })
