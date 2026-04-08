@@ -8,8 +8,15 @@ vim.pack.add(
 
 require("render-markdown").setup({})
 
--- markdown-preview needs yarn build
-local mp_path = vim.fn.stdpath("data") .. "/site/pack/deps/opt/markdown-preview.nvim/app"
-if vim.fn.isdirectory(mp_path) == 1 and vim.fn.isdirectory(mp_path .. "/node_modules") == 0 then
-    vim.fn.system({ "yarn", "install", "--cwd", mp_path })
-end
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "markdown",
+    once = true,
+    callback = function()
+        vim.cmd("packadd markdown-preview.nvim")
+        -- markdown-preview needs yarn build
+        local mp_app = vim.fn.stdpath("data") .. "/site/pack/core/opt/markdown-preview.nvim/app"
+        if vim.fn.isdirectory(mp_app) == 1 and vim.fn.isdirectory(mp_app .. "/node_modules") == 0 then
+            vim.fn.system({ "yarn", "install", "--cwd", mp_app })
+        end
+    end,
+})
