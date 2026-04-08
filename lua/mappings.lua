@@ -219,7 +219,7 @@ map({ "n" }, "<leader>bc", "<cmd>!cargo build<CR>", { desc = "Cargo Build" })
 map({ "n", "i", "v" }, "<C-s>", "<esc><cmd>w<CR>", { silent = true })
 
 -- term
-map({ "n", "t" }, "<F7>", "<cmd>ToggleTerm<CR>", { desc = "Open Terminal" })
+map({ "n", "t" }, "<F7>", function() Snacks.terminal() end, { desc = "Open Terminal" })
 
 -- debug (DAP)
 map({ "n" }, "<leader>d", "", { desc = "Debug" })
