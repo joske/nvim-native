@@ -6,8 +6,9 @@ vim.pack.add(
 )
 require('snacks').setup({
     bigfile = { enabled = true },
-    dashboard = { enabled = false },
-    explorer = { enabled = false },
+    dashboard = { enabled = true },
+    explorer = { enabled = true },
+    git = { enabled = true },
     indent = { enabled = true },
     input = { enabled = true },
     notifier = {
