@@ -4,11 +4,51 @@ vim.pack.add(
     },
     { confirm = false }
 )
+vim.api.nvim_create_autocmd("QuitPre", {
+    callback = function()
+        local wins = vim.api.nvim_list_wins()
+        local explorer_wins = {}
+        for _, win in ipairs(wins) do
+            local buf = vim.api.nvim_win_get_buf(win)
+            local ft = vim.bo[buf].filetype
+            if ft:match("^snacks") then
+                table.insert(explorer_wins, win)
+            end
+        end
+        if #wins - 1 == #explorer_wins then
+            for _, win in ipairs(explorer_wins) do
+                pcall(vim.api.nvim_win_close, win, true)
+            end
+        end
+    end,
+})
+vim.ui.select = function(...) return require("snacks").picker.select(...) end
+vim.ui.input = function(...) return require("snacks").input(...) end
+
 require('snacks').setup({
+    animate = { enabled = false },
     bigfile = { enabled = true },
-    dashboard = { enabled = true },
+    dashboard = {
+        enabled = true,
+        preset = {
+            header = table.concat({
+                " ███    ██ ██    ██ ██ ███    ███",
+                " ████   ██ ██    ██ ██ ████  ████",
+                " ██ ██  ██ ██    ██ ██ ██ ████ ██",
+                " ██  ██ ██  ██  ██  ██ ██  ██  ██",
+                " ██   ████   ████   ██ ██      ██",
+            }, "\n"),
+        },
+        sections = {
+            { section = "header" },
+            { section = "keys", gap = 1, padding = 1 },
+            { section = "recent_files", padding = 1 },
+        },
+    },
+    dim = { enabled = true },
     explorer = { enabled = true },
     git = { enabled = true },
+    gh = { enabled = true },
     indent = { enabled = true },
     input = { enabled = true },
     notifier = {
@@ -19,8 +59,15 @@ require('snacks').setup({
     quickfile = { enabled = false },
     scope = { enabled = true },
     scroll = { enabled = false },
-    statuscolumn = { enabled = true },
-    words = { enabled = true },
+    statuscolumn = { enabled = false },
+    terminal = {
+        enabled = true,
+        win = {
+            position = "float",
+        },
+    },
+    toggle = { enabled = false },
+    words = { enabled = false },
     styles = {
         notification = {
             wo = { wrap = true }, -- Wrap notifications

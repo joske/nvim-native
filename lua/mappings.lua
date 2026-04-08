@@ -186,7 +186,7 @@ map({ "n" }, "<leader>xr", "<cmd>Trouble lsp toggle focus=false win.position=rig
 
 -- todo
 map({ "n" }, "<leader>T", "", { desc = "TODOs" })
-map({ "n" }, "<leader>Tt", "<cmd>TodoTelescope<CR>", { desc = "TODO Picker" })
+map({ "n" }, "<leader>Tt", function() Snacks.picker.todo_comments() end, { desc = "TODO Picker" })
 map({ "n" }, "<leader>Tx", "<cmd>TodoTrouble<CR>", { desc = "TODO Trouble" })
 map({ "n" }, "<leader>Tq", "<cmd>TodoQuickFix<CR>", { desc = "TODO QuickFix" })
 
