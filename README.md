@@ -5,11 +5,13 @@ Modern Neovim config using the built-in `vim.pack` package manager. Requires Neo
 ## Stack
 
 - **vim.pack** for package management (no lazy.nvim)
+- **blink.cmp** for completions
 - **copilot.lua** for GitHub Copilot integration
 - **LSP** via nvim-lspconfig (lua_ls, bashls, yamlls, tombi, texlab, json-lsp)
 - **Mason** for tool installation
+- **none-ls** for formatting (shfmt, yamlfmt)
 - **Treesitter** for syntax highlighting
-- **Snacks** for picker, explorer, dashboard, notifications, lazygit, git, and indent
+- **Snacks** for picker, explorer, dashboard, notifications, lazygit, git, GitHub, terminal, dim, and indent
 - **lualine** for statusline
 - **bufferline** for buffer tabs
 - **which-key** for keybinding hints
