@@ -2,6 +2,23 @@
 
 Modern Neovim config using the built-in `vim.pack` package manager. Requires Neovim 0.12+.
 
+## 🛠️ Installation
+
+#### Make a backup of your current nvim and shared folder
+
+```shell
+mv ~/.config/nvim ~/.config/nvim.bak
+mv ~/.local/share/nvim ~/.local/share/nvim.bak
+mv ~/.local/state/nvim ~/.local/state/nvim.bak
+mv ~/.cache/nvim ~/.cache/nvim.bak
+```
+
+#### Clone the repository
+
+```shell
+git clone https://github.com/joske/nvim-native ~/.config/nvim
+```
+
 ## Stack
 
 - **vim.pack** for package management (no lazy.nvim)
