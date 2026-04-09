@@ -26,26 +26,26 @@ git clone https://github.com/joske/nvim-native ~/.config/nvim
 - **copilot.lua** for GitHub Copilot integration
 - **LSP** via nvim-lspconfig (lua_ls, bashls, yamlls, tombi, texlab, json-lsp)
 - **Mason** for tool installation
-- **none-ls** for formatting (shfmt, yamlfmt)
+- **none-ls** for formatting (shfmt, yamlfmt) and linting (shellcheck)
 - **Treesitter** for syntax highlighting
 - **Snacks** for picker, explorer, dashboard, notifications, lazygit, git, GitHub, terminal, dim, and indent
 - **lualine** for statusline
 - **bufferline** for buffer tabs
 - **which-key** for keybinding hints
-- **aerial.nvim** for code outline
 - **rustaceanvim** + **crates.nvim** for Rust support
 - **neotest** for testing
 - **nvim-dap** + **dapui** for debugging
+- **aerial.nvim** for code outline
 - **Trouble** for diagnostics
 - **todo-comments** for TODO highlighting
-- **fugitive** for git commands
+- **fugitive** + **lazygit.nvim** for git
 - **fidget** for LSP progress
 - **resession** for session management
 - **render-markdown** for in-editor markdown rendering
 - **markdown-preview** for browser-based markdown preview
+- **actions-preview** for code action preview
 - **rainbow-delimiters** for bracket colorization
 - **mini.move**, **mini.pairs**, **mini.comment**, **mini.icons** for editor enhancements
-- **toggleterm** for floating terminal
 - **LuaSnip** for snippets
 
 ## Features
@@ -53,7 +53,6 @@ git clone https://github.com/joske/nvim-native ~/.config/nvim
 - Format on save
 - Inlay hints for supported LSPs
 - Neovide support
-- No external plugin manager required (uses built-in vim.pack)
 
 ## Requirements
 

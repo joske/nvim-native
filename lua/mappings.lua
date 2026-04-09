@@ -90,7 +90,7 @@ map("n", "<leader>uh", toggle_inlay_hints, { desc = "Toggle Inlay Hints" })
 
 -- pickers
 map({ "n" }, "<leader>f", "", { desc = "Find" })
-map({ "n" }, "<leader>fa", vim.lsp.buf.code_action, { desc = "Code Actions" })
+map({ "n" }, "<leader>fa", require("actions-preview").code_actions, { desc = "Code Actions" })
 map({ "n" }, "<leader>fB", function() Snacks.picker.grep_buffers() end, { desc = "Grep Open Buffers" })
 map({ "n" }, "<leader>fb", function() Snacks.picker.buffers() end, { desc = "Find Buffer" })
 map({ "n" }, "<leader>fc", function() Snacks.picker.git_log_file() end, { desc = "File Commits" })

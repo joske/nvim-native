@@ -1,5 +1,6 @@
 vim.pack.add({
         { src = 'https://github.com/stevearc/aerial.nvim' },
+        { src = "https://github.com/nvim-tree/nvim-web-devicons" },
     },
     { confirm = false }
 )
@@ -14,4 +15,9 @@ require('aerial').setup {
     attach_mode = "window",
     close_automatic_events = { "unsupported", "unfocus" },
     open_automatic = false,
+    ignore = {
+        filetypes = { "help", "alpha", "dashboard", "neo-tree", "nvim-tree", "lazy", "mason", "snacks_picker_list" },
+        unlisted_buffers = true
+    },
+
 }

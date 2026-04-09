@@ -5,6 +5,7 @@ vim.pack.add(
         "https://github.com/williamboman/mason-lspconfig.nvim",
         "https://github.com/gbprod/none-ls-shellcheck.nvim",
         "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
+        "https://github.com/jay-babu/mason-nvim-dap.nvim",
     },
     { confirm = false }
 )
@@ -41,4 +42,10 @@ require('mason-tool-installer').setup {
         ["mason-null-ls"] = true,
         ["mason-nvim-dap"] = true,
     },
+}
+
+require("mason-nvim-dap").setup {
+    ensure_installed = { "codelldb" },
+    automatic_installation = true,
+    handlers = {},
 }

@@ -15,6 +15,7 @@ vim.api.nvim_create_autocmd("QuitPre", {
                 table.insert(explorer_wins, win)
             end
         end
+        -- If quitting would leave only snacks windows, close them too
         if #wins - 1 == #explorer_wins then
             for _, win in ipairs(explorer_wins) do
                 pcall(vim.api.nvim_win_close, win, true)
@@ -41,7 +42,7 @@ require('snacks').setup({
         },
         sections = {
             { section = "header" },
-            { section = "keys", gap = 1, padding = 1 },
+            { section = "keys",         gap = 1,    padding = 1 },
             { section = "recent_files", padding = 1 },
         },
     },

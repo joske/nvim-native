@@ -7,7 +7,7 @@ require("bufferline").setup {
         diagnostics = "nvim_lsp",
         separator_style = "slant",
         offsets = {
-            { filetype = "NvimTree", text = "File Explorer", highlight = "Directory", separator = true },
+            { filetype = "snacks_layout_box", text = "File Explorer", highlight = "Directory", separator = true },
         },
         always_show_bufferline = true,
     }

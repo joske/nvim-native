@@ -11,5 +11,7 @@ null_ls.setup({
     sources = {
         null_ls.builtins.formatting.shfmt,
         null_ls.builtins.formatting.yamlfmt,
+        require("none-ls-shellcheck.diagnostics"),
+        require("none-ls-shellcheck.code_actions"),
     },
 })
