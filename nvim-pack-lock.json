@@ -34,7 +34,7 @@
       "src": "https://github.com/zbirenbaum/copilot.lua"
     },
     "crates.nvim": {
-      "rev": "0f536967abd097d9a4275087483f15d012418740",
+      "rev": "694357861ec9ebf12475ddcdd04ea45a0923c32d",
       "src": "https://github.com/saecki/crates.nvim"
     },
     "fidget.nvim": {
@@ -79,7 +79,7 @@
       "src": "https://github.com/nvim-mini/mini.comment"
     },
     "mini.icons": {
-      "rev": "7fdae2443a0e2910015ca39ad74b50524ee682d3",
+      "rev": "bac6317300e205335df425296570d84322730067",
       "src": "https://github.com/nvim-mini/mini.icons"
     },
     "mini.move": {
@@ -152,7 +152,7 @@
       "src": "https://github.com/stevearc/resession.nvim"
     },
     "rustaceanvim": {
-      "rev": "3eca3979c37a55f39119631bbd8a472ea622fc0c",
+      "rev": "f95309a90295be99644efc46fa8127336d21730c",
       "src": "https://github.com/mrcjkb/rustaceanvim"
     },
     "snacks.nvim": {
